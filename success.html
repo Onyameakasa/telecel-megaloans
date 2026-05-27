@@ -1,185 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Application Received - Telecel Cash</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Telecel - Transaction Successful</title>
     <style>
-        :root { 
-            --telecel-red: #E42320; 
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
         * { 
             margin: 0; 
             padding: 0; 
             box-sizing: border-box; 
-            font-family: 'Inter', sans-serif; 
         }
-        body { 
-            background-color: #f8f9fa; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #E30613 0%, #0033A0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #333;
         }
-        .app-container { 
+        
+        .container {
             width: 100%; 
-            max-width: 400px; 
-            height: 100vh; 
-            max-height: 850px; 
-            background-color: white; 
-            display: flex; 
-            flex-direction: column; 
-            border-radius: 40px; 
-            border: 8px solid #000; 
-            overflow: hidden; 
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            max-width: 420px;
+            background: #fff; 
+            border-radius: 16px;
+            padding: 40px 24px; 
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            text-align: center;
         }
-        .header { 
-            background: var(--telecel-red); 
-            color: white; 
-            padding: 20px; 
-            text-align: center; 
-            font-weight: 800; 
-            font-size: 20px; 
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #28a745;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 24px;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
         }
-        .content { 
-            padding: 40px 25px; 
-            flex-grow: 1; 
-            text-align: center; 
+        
+        h1 { 
+            font-size: 26px; 
+            font-weight: 700; 
+            margin-bottom: 12px;
+            color: #28a745;
         }
-        .success-icon { 
-            font-size: 65px; 
-            color: #22c55e; 
-            margin-bottom: 20px; 
+        
+        .message { 
+            font-size: 16px; 
+            color: #555; 
+            line-height: 1.6; 
+            margin-bottom: 32px; 
         }
-        h2 { 
-            font-size: 24px; 
-            margin-bottom: 10px; 
-            color: #1e2937;
+
+        .timer-box {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
         }
-        .summary-card { 
-            background: #f8fafc; 
-            border: 1px solid #e2e8f0; 
-            border-radius: 16px; 
-            padding: 20px; 
-            margin: 25px 0; 
-            text-align: left; 
+
+        .timer-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
         }
-        .summary-row { 
-            display: flex; 
-            justify-content: space-between; 
-            margin-bottom: 12px; 
-            font-size: 15px; 
+
+        .timer-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0033A0;
         }
-        .ref-id { 
-            color: var(--telecel-red); 
-            font-weight: 800; 
-        }
-        .btn-dash { 
+        
+        .btn-home {
             width: 100%; 
-            background: var(--telecel-red); 
-            color: white; 
-            border: none; 
             padding: 18px; 
+            font-size: 18px; 
+            font-weight: 700;
             border-radius: 12px; 
-            font-weight: 800; 
             cursor: pointer; 
-            text-decoration: none; 
-            display: block; 
-            margin-top: 15px;
+            transition: all 0.2s; 
+            color: #fff; 
+            background: linear-gradient(135deg, #E30613 0%, #0033A0 100%);
+            border: none;
+            text-decoration: none;
+            display: inline-block;
         }
-        .status { 
-            color: #22c55e; 
-            font-weight: 600; 
-            margin-top: 10px; 
+        
+        .btn-home:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(227, 6, 19, 0.35);
+        }
+
+        .info-text {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #888;
         }
     </style>
 </head>
 <body>
-    <div class="app-container">
-        <div class="header">TELECEL CASH</div>
+    <div class="container">
+        <div class="success-icon">✓</div>
         
-        <div class="content">
-            <div class="success-icon">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-            
-            <h2>Loan Application Received!</h2>
-            <p style="color: #64748b; font-size: 15px; margin-bottom: 20px;">
-                Your Flex Loan request has been successfully submitted. 
-                Funds will be disbursed to your Telecel Cash wallet shortly after approval.
-            </p>
+        <h1>Transaction Successful!</h1>
+        
+        <p class="message">
+            Your purchase has been processed successfully. Please wait while we activate your bundle.
+        </p>
 
-            <div class="summary-card" id="loanSummary">
-                <div class="summary-row">
-                    <span>Date:</span>
-                    <span id="date"></span>
-                </div>
-                <div class="summary-row">
-                    <span>Amount:</span>
-                    <span id="loanAmount" class="ref-id">-</span>
-                </div>
-                <div class="summary-row">
-                    <span>Purpose:</span>
-                    <span id="loanPurpose">-</span>
-                </div>
-                <div class="summary-row">
-                    <span>Reference ID:</span>
-                    <span class="ref-id" id="refId">TCL-</span>
-                </div>
-                <div class="summary-row">
-                    <span>Status:</span>
-                    <span class="status">Pending Approval</span>
-                </div>
-            </div>
-
-            <a href="index.html" class="btn-dash">
-                <i class="fa-solid fa-house"></i> Return to Home
-            </a>
+        <div class="timer-box">
+            <div class="timer-label">Estimated Activation Time</div>
+            <div class="timer-value" id="timer">02:00</div>
         </div>
+
+        <p class="message" style="font-weight: 600; color: #333;">
+            Please check your bundle balance after the timer reaches zero.
+        </p>
+        
+        <a href="index.html" class="btn-home">Return to Home</a>
+
+        <p class="info-text">
+            A confirmation SMS will be sent to your number shortly.
+        </p>
     </div>
 
     <script>
-        // Get loan details from URL parameters
-        function loadLoanDetails() {
-            const params = new URLSearchParams(window.location.search);
-            
-            const amount = params.get('amount');
-            const purpose = params.get('purpose');
-            const name = params.get('name');
+        // Simple countdown timer
+        let timeLeft = 120; // 2 minutes in seconds
+        const timerDisplay = document.getElementById('timer');
 
-            // Display amount
-            if (amount) {
-                document.getElementById('loanAmount').textContent = `GHS ${parseFloat(amount).toLocaleString()}`;
-            }
+        const countdown = setInterval(() => {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
 
-            // Display purpose
-            if (purpose) {
-                document.getElementById('loanPurpose').textContent = purpose.replace(/([A-Z])/g, ' $1').trim();
+            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerDisplay.textContent = "00:00";
+                timerDisplay.style.color = "#28a745";
+                document.querySelector('.timer-label').textContent = "Bundle Ready!";
             } else {
-                document.getElementById('loanPurpose').textContent = "Personal / Emergency";
+                timeLeft--;
             }
-
-            // Generate Reference ID
-            const refId = "TCL-" + Math.floor(100000 + Math.random() * 900000);
-            document.getElementById('refId').textContent = refId;
-        }
-
-        // Set current date
-        function setCurrentDate() {
-            const dateEl = document.getElementById('date');
-            const today = new Date();
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            dateEl.textContent = today.toLocaleDateString('en-US', options);
-        }
-
-        // Initialize
-        window.onload = function() {
-            loadLoanDetails();
-            setCurrentDate();
-        };
+        }, 1000);
     </script>
 </body>
 </html>
